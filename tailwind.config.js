@@ -15,6 +15,9 @@ export default withMT({
         secondary: '#59C6D2',
       }
     },
+    fontFamily: {
+      serif : ["Playfair Display", "serif"],
+    },
   },
   plugins: [],
 });
