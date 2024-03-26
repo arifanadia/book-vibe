@@ -1,0 +1,111 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://i.ibb.co/M5Qhfns/playbook.png",
+      "review": "A classic tale of the Roaring Twenties",
+      "totalPages": 180,
+      "category": "Fiction",
+      "tags": ["Classic", "Romance"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 2,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "mockingbird.jpg",
+      "review": "https://i.ibb.co/HYNqX6Z/money.png",
+      "totalPages": 281,
+      "category": "Fiction",
+      "tags": ["Classic", "Social Issues"],
+      "publisher": "J. B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 3,
+      "bookName": "Harry Potter and the Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "image": "https://i.ibb.co/4RWjkSq/hate.png",
+      "review": "The beginning of an epic magical journey",
+      "totalPages": 320,
+      "category": "Fantasy",
+      "tags": ["Magic", "Adventure"],
+      "publisher": "Bloomsbury Publishing",
+      "yearOfPublishing": 1997
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://i.ibb.co/FHtphp2/scholarship.png",
+      "review": "A coming-of-age novel that resonates with teenagers",
+      "totalPages": 224,
+      "category": "Fiction",
+      "tags": ["Classic", "Coming-of-Age"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 5,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://i.ibb.co/6FzzSTn/family-code.png",
+      "review": "A dystopian masterpiece that remains relevant today",
+      "totalPages": 328,
+      "category": "Fiction",
+      "tags": ["Dystopian", "Political"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 6,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "https://i.ibb.co/p47gqrG/loving.png",
+      "review": "A timeless romance with unforgettable characters",
+      "totalPages": 279,
+      "category": "Romance",
+      "tags": ["Classic", "Regency"],
+      "publisher": "T. Egerton, Whitehall",
+      "yearOfPublishing": 1813
+    },
+    {
+        "bookId": 7,
+        "bookName": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "image": "https://i.ibb.co/bWNHgf7/conversation.png",
+        "review": "A captivating tale of adventure in Middle-earth",
+        "totalPages": 310,
+        "category": "Fantasy",
+        "tags": ["Adventure", "Epic"],
+        "publisher": "George Allen & Unwin",
+        "yearOfPublishing": 1937
+      },
+      {
+        "bookId": 8,
+        "bookName": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "image": "https://i.ibb.co/DrwG79C/dragon.png",
+        "review": "A gripping dystopian thriller set in Panem",
+        "totalPages": 374,
+        "category": "Science Fiction",
+        "tags": ["Dystopian", "Survival"],
+        "publisher": "Scholastic Press",
+        "yearOfPublishing": 2008
+      },
+      {
+        "bookId": 9,
+        "bookName": "The Alchemist",
+        "author": "Paulo Coelho",
+        "image": "alchemist.jpg",
+        "review": "A philosophical and spiritual journey of self-discovery",
+        "totalPages": 208,
+        "category": "Fiction",
+        "tags": ["Philosophical", "Spiritual"],
+        "publisher": "HarperCollins",
+        "yearOfPublishing": 1988
+      }
+  ]
+  
