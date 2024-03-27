@@ -1,5 +1,6 @@
-import { Button } from "@material-tailwind/react";
+
 import banner from "../../../public/images/playbook.png"
+import { NavLink } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -7,12 +8,11 @@ const Banner = () => {
             <div>
             <h1 className="font-serif font-bold text-6xl leading-tight mb-12">Books to freshen <br />
              up your bookshelf</h1>
-             <Button
-                size="sm"
-                className="bg-primary rounded text-xl capitalize"
+             <NavLink to={"/listed-books"}
+                className="bg-primary rounded text-xl text-white px-7 py-3 font-bold"
               >
-                <span>View The List</span>
-              </Button>
+                View The List
+              </NavLink>
             </div>
             <div>
                 <img src={banner} alt="banner-img" />

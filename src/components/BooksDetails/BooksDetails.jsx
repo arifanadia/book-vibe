@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import UseBooksData from "../../Hooks/UseBooksData";
 import { useEffect, useState } from "react";
-// import "./BooksDetails.css";
+import { saveToLocalStorage } from "../../utilities/utilities";
+
 
 const BooksDetails = () => {
     const [singleBook, setSingleBook] = useState({})
@@ -11,15 +12,20 @@ const BooksDetails = () => {
 
     useEffect(() => {
         if (booksData) {
-            const singleBook = booksData.find(book => book.bookId == id)
-            console.log(singleBook)
+            const singleBook = booksData.find(book => book.bookId == id);
             setSingleBook(singleBook)
         }
 
     }, [booksData, id])
+    
+    const handleRead = () => {
+        saveToLocalStorage(singleBook);
+    };
+
+    
     const { tags, bookName, author, category, ratings, image, review, totalPages, publisher, yearOfPublishing } = singleBook || {}
     return (
-        <div className="flex max-w-7xl mx-auto gap-8 mt-16 mb-28">
+        <div className="md:flex max-w-7xl md:mx-auto mx-4 gap-8 mt-16 mb-28">
             <div className=" flex-1 bg-[#1313130D] p-20 rounded-2xl">
                 <img className="w-3/5 mx-auto" src={image} alt="" />
             </div>
@@ -39,6 +45,7 @@ const BooksDetails = () => {
                 }
                 <hr className="my-6" />
                 <table  >
+                    <tbody>
                     <tr className="*:pr-10" >
                         <td >Number of Pages :</td>
                         <td className="font-semibold ">{totalPages}</td>
@@ -55,9 +62,11 @@ const BooksDetails = () => {
                         <td>Rating :</td>
                         <td className="font-semibold">{ratings}</td>
                     </tr>
+                    </tbody>
                 </table>
                 <div className="mt-8">
-                    <button className="font-semibold text-[#131313] text-lg px-7 py-3 hover:bg-primary border border-[#1313134D] rounded-xl mr-4 ">Read</button>
+                    <button onClick={handleRead}
+                     className="font-semibold text-[#131313] text-lg px-7 py-3 hover:bg-primary border border-[#1313134D] rounded-xl mr-4 ">Read</button>
                     <button className="font-semibold text-lg px-7 py-3 bg-secondary text-white rounded-xl ">Wishlist</button>
                 </div>
 
