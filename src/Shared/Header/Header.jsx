@@ -1,10 +1,10 @@
 import React from "react";
 import {
     Navbar,
-    MobileNav,
     Typography,
     Button,
     IconButton,
+    Collapse,
     
   } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
@@ -77,7 +77,7 @@ const Header = () => {
  
   return (
     <div className=" ">
-      <Navbar className="sticky top-0 z-10 h-max max-w-[1170] mx-auto  rounded-none px-4 py-4 lg:px-8 lg:py-4">
+      <Navbar className="sticky top-0 z-10 h-max max-w-7xl mx-auto  rounded-none px-4 py-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
@@ -91,7 +91,7 @@ const Header = () => {
             <div className="flex items-center gap-x-1">
               <Button
                 size="sm"
-                className="hidden lg:inline-block bg-primary"
+                className="hidden lg:inline-block bg-primary capitalize"
               >
                 <span>Sign In</span>
               </Button>
@@ -141,7 +141,7 @@ const Header = () => {
             </IconButton>
           </div>
         </div>
-        <MobileNav open={openNav}>
+        <Collapse open={openNav}>
           {navList}
           <div className="flex items-center gap-x-1">
             <Button fullWidth variant="text" size="sm" className=" bg-primary">
@@ -151,7 +151,7 @@ const Header = () => {
               <span>Sign Up</span>
             </Button>
           </div>
-        </MobileNav>
+        </Collapse>
       </Navbar>
       
     </div>
