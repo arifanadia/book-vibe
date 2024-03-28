@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import ReadBooks from "../ReadBooks/ReadBooks";
 import UseReadStorage from "../../Hooks/UseReadStorage";
 import UseWishStorage from "../../Hooks/UseWishStorage";
@@ -8,15 +9,7 @@ import WishlistBook from "../WishlistBook/WishlistBook";
 const ListedBooks = () => {
     const { localReadBooks } = UseReadStorage();
     const { localWishlistBooks } = UseWishStorage();
-    const [showAll, setShowAll] = useState(false);
-
-    const handleShowAll = () => {
-        setShowAll(!showAll);
-    }
-
-    if (localReadBooks.length == 0 || localWishlistBooks.length == 0) {
-        return (<p className="text-center mt-16"> No Data Found .......</p>)
-    }
+    const [tabIndex, setTabIndex] = useState(0);
 
     return (
         <div className="max-w-7xl mx-auto">
@@ -34,29 +27,20 @@ const ListedBooks = () => {
                 </div>
             </div>
             <div className="mt-16">
-                <Link className="border border-gray-500 px-6 py-3 rounded-lg border-b-0">Read Books</Link>
-                <Link className=" border-b-gray-500 py-3 border-b pl-6 pr-[1010px]">Wishlist Books</Link>
+                <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+                    <TabList>
+                        <Tab>Title 1</Tab>
+                        <Tab>Title 2</Tab>
+                    </TabList>
+                    <TabPanel>  {
+                        localReadBooks.map((Read) => <ReadBooks key={Read.id} Read={Read}></ReadBooks>)
+                    }</TabPanel>
+                    <TabPanel> {
+                        localWishlistBooks.map((wishlist) => <WishlistBook key={wishlist.id} wishlist={wishlist}></WishlistBook>)
+                    }</TabPanel>
+                </Tabs>
 
             </div>
-            <div>
-                {
-                    localReadBooks.map((Read) => <ReadBooks key={Read.id} Read={Read}></ReadBooks>)
-                }
-                {
-                    localWishlistBooks.map((wishlist) => <WishlistBook key={wishlist.id} wishlist={wishlist}></WishlistBook>)
-                }
-            </div>
-          
-            {
-                localReadBooks.length > 3 || localWishlistBooks.length > 3 ? (
-                    <div className="flex justify-center my-12">
-                        <button onClick={handleShowAll}
-                            className="mr-6 text-white px-6 py-2 rounded-lg bg-primary">{showAll ? "Show All" : "Show Less"} </button>
-                    </div>
-                ) : null
-            }
-
-
 
         </div>
     );

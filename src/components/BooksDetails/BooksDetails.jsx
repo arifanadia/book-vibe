@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import UseBooksData from "../../Hooks/UseBooksData";
 import { useEffect, useState } from "react";
 import CustomSpinner from "../CustomSpinner/CustomSpinner";
@@ -10,7 +10,6 @@ const BooksDetails = () => {
     const [singleBook, setSingleBook] = useState({})
     const { id } = useParams();
     const { booksData, loading } = UseBooksData();
-    
     useEffect(() => {
         if (booksData) {
             const singleBook = booksData.find(book => book.bookId == id);
@@ -79,9 +78,9 @@ const BooksDetails = () => {
                     </tbody>
                 </table>
                 <div className="mt-8">
-                    <Link to={"/read"} onClick={handleRead}
-                     className="font-semibold text-[#131313] text-lg px-7 py-3 hover:bg-primary border border-[#1313134D] rounded-xl mr-4 ">Read</Link>
-                    <Link to={"/wish"} onClick={handleWishlist} className="font-semibold text-lg px-7 py-3 bg-secondary text-white rounded-xl ">Wishlist</Link>
+                    <button onClick={handleRead}
+                     className="font-semibold text-[#131313] text-lg px-7 py-3 hover:bg-primary border border-[#1313134D] rounded-xl mr-4 ">Read</button>
+                    <button onClick={handleWishlist} className="font-semibold text-lg px-7 py-3 bg-secondary text-white rounded-xl ">Wishlist</button>
                 </div>
 
 
