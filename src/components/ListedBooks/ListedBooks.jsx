@@ -29,8 +29,8 @@ const ListedBooks = () => {
             <div className="mt-16">
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
+                        <Tab>Read Books</Tab>
+                        <Tab>Wishlist Books</Tab>
                     </TabList>
                     <TabPanel>  {
                         localReadBooks.map((Read) => <ReadBooks key={Read.id} Read={Read}></ReadBooks>)

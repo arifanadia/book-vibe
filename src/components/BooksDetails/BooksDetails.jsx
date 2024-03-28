@@ -23,9 +23,7 @@ const BooksDetails = () => {
     }
     
     const handleRead = () => {
-           
         saveToReadLocalStorage(singleBook)
-        
         
     };
     const handleWishlist = () => {

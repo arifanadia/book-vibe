@@ -4,6 +4,7 @@ export const saveToWishLocalStorage = (data) => {
     if(!existedWishListBook){
         savedWishListBook.push(data);
         localStorage.setItem("wishList",JSON.stringify(savedWishListBook));
+        
     } 
 }
 
