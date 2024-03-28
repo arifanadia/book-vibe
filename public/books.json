@@ -13,7 +13,8 @@
     ],
     "publisher": "Charles Scribner's Sons",
     "yearOfPublishing": 1925,
-    "ratings": 4.5
+    "ratings": 4.5,
+    "color": "#0085F6"
   },
   {
     "bookId": 2,
@@ -29,7 +30,8 @@
     ],
     "publisher": "J. B. Lippincott & Co.",
     "yearOfPublishing": 1960,
-    "ratings": 4.8
+    "ratings": 4.8,
+    "color": "#FBB929"
   },
   {
     "bookId": 3,
@@ -45,7 +47,8 @@
     ],
     "publisher": "Bloomsbury Publishing",
     "yearOfPublishing": 1997,
-    "ratings": 4.9
+    "ratings": 4.9,
+    "color": "#FB0100"
   },
   {
     "bookId": 4,
@@ -61,7 +64,8 @@
     ],
     "publisher": "Little, Brown and Company",
     "yearOfPublishing": 1951,
-    "ratings": 4.3
+    "ratings": 4.3,
+    "color": "#FBB929"
   },
   {
     "bookId": 5,
@@ -77,7 +81,8 @@
     ],
     "publisher": "Secker & Warburg",
     "yearOfPublishing": 1949,
-    "ratings": 4.7
+    "ratings": 4.7,
+    "color": "#FB0100"
   },
   {
     "bookId": 6,
@@ -93,7 +98,8 @@
     ],
     "publisher": "T. Egerton, Whitehall",
     "yearOfPublishing": 1813,
-    "ratings": 4.6
+    "ratings": 4.6,
+    "color": "#FBB929"
   },
   {
     "bookId": 7,
@@ -109,7 +115,8 @@
     ],
     "publisher": "George Allen & Unwin",
     "yearOfPublishing": 1937,
-    "ratings": 4.8
+    "ratings": 4.8,
+    "color": "#FB0100"
   },
   {
     "bookId": 8,
@@ -125,7 +132,7 @@
     ],
     "publisher": "Scholastic Press",
     "yearOfPublishing": 2008,
-    "ratings": 4.5
+    "color": "#FBB929"
   },
   {
     "bookId": 9,
@@ -141,6 +148,7 @@
     ],
     "publisher": "HarperCollins",
     "yearOfPublishing": 1988,
-    "ratings": 4.9
+    "ratings": 4.9,
+    "color" : "#0085F6"
   }
 ]
