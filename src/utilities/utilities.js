@@ -1,18 +1,16 @@
-export const saveToLocalStorage = (data) => {
-    const saveData = JSON.parse(localStorage.getItem("books")) || [];
-    
-
-    const existedData = saveData.find(item => item.id == data.bookId);
-    if(!existedData){
-        saveData.push(data);
-        localStorage.setItem("books",JSON.stringify(saveData));
-        alert('added successfully')
-    } else {
-        alert('already read')
+export const saveToReadLocalStorage = (data) => {
+    const savedReadBook = JSON.parse(localStorage.getItem("books")) || [];
+    const existedReadBook= savedReadBook.find(item => item.id == data.bookId);
+    if(!existedReadBook){
+        savedReadBook.push(data);
+        localStorage.setItem("books",JSON.stringify(savedReadBook));
+       
     }
+ 
 };
 
-export const getFromLocalStorage = () => {
-    const data = JSON.parse(localStorage.getItem("books")) || [];
-    return data;
-};
+export const getFromReadLocalStorage = () => {
+    const readBooks = JSON.parse(localStorage.getItem("books")) || [];
+    return readBooks;
+};   
+   

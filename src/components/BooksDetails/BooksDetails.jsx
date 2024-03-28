@@ -1,15 +1,16 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import UseBooksData from "../../Hooks/UseBooksData";
 import { useEffect, useState } from "react";
-import { saveToLocalStorage } from "../../utilities/utilities";
+import CustomSpinner from "../CustomSpinner/CustomSpinner";
+import { saveToReadLocalStorage } from "../../utilities/utilities";
+import { saveToWishLocalStorage } from "../../utilities/wishlist";
 
 
 const BooksDetails = () => {
     const [singleBook, setSingleBook] = useState({})
     const { id } = useParams();
-    const { booksData } = UseBooksData();
-
-
+    const { booksData, loading } = UseBooksData();
+    
     useEffect(() => {
         if (booksData) {
             const singleBook = booksData.find(book => book.bookId == id);
@@ -18,8 +19,21 @@ const BooksDetails = () => {
 
     }, [booksData, id])
     
+    if(loading){
+        return <CustomSpinner></CustomSpinner>
+    }
+    
     const handleRead = () => {
-        saveToLocalStorage(singleBook);
+           
+        saveToReadLocalStorage(singleBook)
+        
+        
+    };
+    const handleWishlist = () => {
+        
+       saveToWishLocalStorage(singleBook)
+        
+       
     };
 
     
@@ -65,9 +79,9 @@ const BooksDetails = () => {
                     </tbody>
                 </table>
                 <div className="mt-8">
-                    <button onClick={handleRead}
-                     className="font-semibold text-[#131313] text-lg px-7 py-3 hover:bg-primary border border-[#1313134D] rounded-xl mr-4 ">Read</button>
-                    <button className="font-semibold text-lg px-7 py-3 bg-secondary text-white rounded-xl ">Wishlist</button>
+                    <Link to={"/read"} onClick={handleRead}
+                     className="font-semibold text-[#131313] text-lg px-7 py-3 hover:bg-primary border border-[#1313134D] rounded-xl mr-4 ">Read</Link>
+                    <Link to={"/wish"} onClick={handleWishlist} className="font-semibold text-lg px-7 py-3 bg-secondary text-white rounded-xl ">Wishlist</Link>
                 </div>
 
 

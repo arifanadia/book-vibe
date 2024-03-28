@@ -8,6 +8,7 @@ import {
     
   } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
+import CustomSpinner from "../../components/CustomSpinner/CustomSpinner";
 
 const Header = () => {
     
@@ -28,7 +29,13 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/"} className="flex items-center">
+        <NavLink to={"/"} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "border-2 px-6 py-3 rounded-lg border-primary text-primary"
+                        : isPending
+                        ? <CustomSpinner></CustomSpinner>
+                        :"flex items-center"
+                    }>
           Home
         </NavLink>
       </Typography>
@@ -38,7 +45,13 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/listed-books"} className="flex items-center">
+        <NavLink to={"/listed-books"} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "border-2 px-6 py-3 rounded-lg border-primary text-primary"
+                        : isPending
+                        ? <CustomSpinner></CustomSpinner>
+                        :"flex items-center"
+                    }>
           Listed Books
         </NavLink>
       </Typography>
@@ -48,7 +61,13 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/pages-to-read"} className="flex items-center">
+        <NavLink to={"/pages-to-read"} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "border-2 px-6 py-3 rounded-lg border-primary text-primary"
+                        : isPending
+                        ? <CustomSpinner></CustomSpinner>
+                        :"flex items-center"
+                    }>
           Pages to Read
         </NavLink>
       </Typography>
@@ -58,7 +77,13 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/blogs"} className="flex items-center">
+        <NavLink to={"/blogs"} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "border-2 px-6 py-3 rounded-lg border-primary text-primary"
+                        : isPending
+                        ? <CustomSpinner></CustomSpinner>
+                        :"flex items-center"
+                    }>
           Blogs
         </NavLink>
       </Typography>
@@ -68,8 +93,14 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/submit"} className="flex items-center">
-          Submit
+        <NavLink to={"/publish"} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "border-2 px-6 py-3 rounded-lg border-primary text-primary"
+                        : isPending
+                        ? <CustomSpinner></CustomSpinner>
+                        :"flex items-center"
+                    }>
+          Publish
         </NavLink>
       </Typography>
     </ul>

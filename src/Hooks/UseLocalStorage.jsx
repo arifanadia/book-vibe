@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
-import { getFromLocalStorage } from "../utilities/utilities";
+import {  getFromReadLocalStorage } from "../utilities/utilities";
+import { getFromWishlistLocalStorage } from "../utilities/wishlist";
 
 const UseLocalStorage = () => {
-    const [localData, setLocalData] = useState([]);
+    const [localReadBooks, setLocalReadBooks] = useState([]);
+    const [localWishlistBooks, setLocalWishlistBooks] = useState([]);
 
-    useEffect(()=> {
-        setLocalData(getFromLocalStorage)
+    useEffect(() => {
+        const { readBooks } = getFromReadLocalStorage();
+        setLocalReadBooks(readBooks)
+    }, [])
+    useEffect(() => {
+        const { wishlistBooks } = getFromWishlistLocalStorage();
+        setLocalWishlistBooks(wishlistBooks)
+    }, [])
+    return { localReadBooks, localWishlistBooks }
 
-    },[])
-    return {localData}
 };
 
 export default UseLocalStorage;

@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import { GoLocation, GoPeople } from "react-icons/go";
 import { PiNotebookBold } from "react-icons/pi";
 
-const ReadBooks = ({ data }) => {
-    const { tags, bookName, author, category, ratings, image, totalPages, publisher } = data || {}
+const WishlistBook = ({ wishlist }) => {
+
+    const { tags, bookName, author, category, ratings, image, totalPages, publisher } = wishlist || {}
     return (
         <div className="flex gap-8 mt-12 border border-[#13131326] rounded-xl p-6 ">
             <div className="bg-[#1313130D] rounded-xl w-[230px] px-12 py-7">
@@ -35,9 +36,9 @@ const ReadBooks = ({ data }) => {
     );
 };
 
-ReadBooks.propTypes = {
-    data : PropTypes.object.isRequired
+WishlistBook.propTypes = {
+    wishlist : PropTypes.object.isRequired
     
 };
 
-export default ReadBooks;
+export default WishlistBook;
